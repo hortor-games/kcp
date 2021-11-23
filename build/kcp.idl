@@ -1,0 +1,38 @@
+interface KcpOutputCallback{
+
+};
+
+[JSImplementation="KcpOutputCallback"]
+interface KcpOutputCallbackImpl {
+  void KcpOutputCallbackImpl();
+  long output([Const] any buf, long len, Kcp kcp, any user);
+};
+
+interface KcpLogCallback{
+
+};
+
+[JSImplementation="KcpLogCallback"]
+interface KcpLogCallbackImpl {
+  void KcpLogCallbackImpl();
+  long writelog([Const] DOMString buf, Kcp kcp, any user);
+};
+
+interface Kcp {
+  void Kcp(unsigned long conv, VoidPtr user);
+  void setStream(long stream);
+  long getStream();
+  void setOutput(KcpOutputCallback output);
+  void setWritelog(KcpLogCallback writelog);
+  long recv(any buffer, long len);
+  long send([Const] any buffer, long len);
+  void update(unsigned long current);
+  unsigned long check(unsigned long current);
+  long input([Const] any data, long size);
+  void flush();
+  long peeksize();
+  long setmtu(long mtu);
+  long wndsize(long sndwnd, long rcvwnd);
+  long waitsnd();
+  long nodelay(long nodelay, long interval, long resend, long nc);
+};

@@ -8,14 +8,14 @@ public:
       var self = Module['getCache'](Module['KcpOutputCallbackImpl'])[$0];
       if (!self.hasOwnProperty('output')) throw 'a JSImplementation must implement all functions, you forgot KcpOutputCallbackImpl::output.';
       return self['output']($1,$2,$3,$4);
-    }, (int)this, buf, len, (int)kcp, user);
+    }, (ptrdiff_t)this, buf, len, (ptrdiff_t)kcp, user);
   }
   void __destroy__()  {
     EM_ASM_INT({
       var self = Module['getCache'](Module['KcpOutputCallbackImpl'])[$0];
       if (!self.hasOwnProperty('__destroy__')) throw 'a JSImplementation must implement all functions, you forgot KcpOutputCallbackImpl::__destroy__.';
       self['__destroy__']();
-    }, (int)this);
+    }, (ptrdiff_t)this);
   }
 };
 
@@ -26,14 +26,14 @@ public:
       var self = Module['getCache'](Module['KcpLogCallbackImpl'])[$0];
       if (!self.hasOwnProperty('writelog')) throw 'a JSImplementation must implement all functions, you forgot KcpLogCallbackImpl::writelog.';
       return self['writelog']($1,$2,$3);
-    }, (int)this, buf, (int)kcp, user);
+    }, (ptrdiff_t)this, buf, (ptrdiff_t)kcp, user);
   }
   void __destroy__()  {
     EM_ASM_INT({
       var self = Module['getCache'](Module['KcpLogCallbackImpl'])[$0];
       if (!self.hasOwnProperty('__destroy__')) throw 'a JSImplementation must implement all functions, you forgot KcpLogCallbackImpl::__destroy__.';
       self['__destroy__']();
-    }, (int)this);
+    }, (ptrdiff_t)this);
   }
 };
 
